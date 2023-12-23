@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv')
 const mongoose = require("mongoose")
 const userListRouter = require("./router/userList")
+const PORT = process.env.PORT || 8080
 
 const corsOptions = {
     origin: 'http://localhost:3000/',
@@ -29,4 +30,4 @@ mongoose.connect(process.env.MONGO_URL,
 
 app.use(`/api/v1/user`, userListRouter)
 
-app.listen(process.env.PORT, () => console.log(`server is running on http://localhost:${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(`server is running on http://localhost:${PORT}`))
